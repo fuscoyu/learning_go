@@ -2,13 +2,25 @@ package main
 
 import (
 	"fmt"
-	"math"
-	"strconv"
 	// "math"
+	"strconv"
 )
 
 func testVar() {
 	// fmt.Println("hello luyu")
+	var str1 string
+	str1 = "hello"
+	fmt.Println(str1)
+
+	var str2 string = "hello go1"
+	fmt.Println(str2)
+
+	var str3,str4 string = "hello", "go2"
+	fmt.Println(str3,str4)
+
+	str5 := "hello go3"
+	fmt.Println(str5)
+
 	var i int64
 	var s string
 	fmt.Println("i is ", i)
@@ -21,14 +33,14 @@ func testVar() {
 }
 
 func testBool() {
-	var b1 bool
+	var b1 bool //默认是false
 	b2 := true
 	b3 := false
 	fmt.Println(b1, b2, b3)
 }
 
 func testNumber() {
-	var i int64
+	var i int64 // 默认为0值
 	var i2 int32
 	fmt.Println(i, i2)
 	i3 := 10
@@ -39,14 +51,11 @@ func testNumber() {
 	// fmt.Println(1.0 / 0)
 }
 func testString() {
-	s1 := "你好 go"
-	s2 := `
-	你好
-	go
-	`
+	s1 := "\"你好 go\""
+	s2 := `"你好go"`
 	fmt.Println(s1)
 	fmt.Println(s2)
-	fmt.Println(s1 + s2)
+	// fmt.Println(s1 + s2)
 }
 
 func testConvert() {
@@ -100,6 +109,7 @@ const (
 )
 
 func main() {
+	testVar()
 	// testBool()
 	// testNumber()
 	// testString()
@@ -112,9 +122,9 @@ func main() {
 	// 2. 自己使用的根据数据大小选择。
 
 	// int类型取值范围
-	fmt.Println("int8:", math.MinInt8, "~", math.MaxInt8)
-	fmt.Println("int16:", math.MinInt16, "~", math.MaxInt16)
-	fmt.Println("int32:", math.MinInt32, "~", math.MaxInt32)
-	fmt.Println("int64:", math.MinInt64, "~", math.MaxInt64)
+	// fmt.Println("int8:", math.MinInt8, "~", math.MaxInt8)
+	// fmt.Println("int16:", math.MinInt16, "~", math.MaxInt16)
+	// fmt.Println("int32:", math.MinInt32, "~", math.MaxInt32)
+	// fmt.Println("int64:", math.MinInt64, "~", math.MaxInt64)
 
 }
