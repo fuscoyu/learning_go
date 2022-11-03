@@ -38,6 +38,14 @@ func filterIntSlice(intVals []int, predicate func(i int) bool) []int {
 	}
 	return res
 }
+
+func fib(n int) int {
+    if n < 2 {
+        return n
+    }
+    return fib(n-1) + fib(n-2)
+}
+
 func main() {
 	str := "rong"
 	changeStr(str) //值传递
@@ -58,5 +66,7 @@ func main() {
 	testFuncType()
 
 	testMapFunc()
+
+  fmt.Println(fib(10))
 
 }

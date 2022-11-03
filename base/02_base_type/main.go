@@ -37,6 +37,15 @@ func testBool() {
 	b2 := true
 	b3 := false
 	fmt.Println(b1, b2, b3)
+  if b1 {
+    fmt.Println("b1 is true")
+  }
+  if b2 {
+    fmt.Println("b2 is true")
+  }
+  if b3 {
+    fmt.Println("b3 is true")
+  }
 }
 
 func testNumber() {
@@ -109,8 +118,8 @@ const (
 )
 
 func main() {
-	testVar()
-	// testBool()
+	// testVar()
+	testBool()
 	// testNumber()
 	// testString()
 	// fmt.Println(Sunday, Monday)
@@ -126,5 +135,18 @@ func main() {
 	// fmt.Println("int16:", math.MinInt16, "~", math.MaxInt16)
 	// fmt.Println("int32:", math.MinInt32, "~", math.MaxInt32)
 	// fmt.Println("int64:", math.MinInt64, "~", math.MaxInt64)
+  var i int64
+  var b string
+  fmt.Println("i is ", i) // i is 0
+  fmt.Println("b is ", b) // b is ""
+
+  var floatNum float64 = 1.0
+  var price1, price2  float64 = 8.8, 9.6
+  fmt.Println(floatNum, price1, price2) // 1.0, 8.8, 9.6
+
+  ii := 1 
+  s := "Hello Go!"
+  fmt.Println("ii is ", ii) // ii is 1
+  fmt.Println("s is ", s) // s is Hello Go!
 
 }

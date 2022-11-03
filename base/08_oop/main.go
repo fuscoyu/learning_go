@@ -26,23 +26,23 @@ func (e Enum) String() string {
 	}[e]
 }
 func main() {
-	// fmt.Println(Init)
-	// fmt.Println(Success)
+	fmt.Println(Init)
+	fmt.Println(Success)
 
-	// status := 0
+	status := 0
 	// fmt.Println(Init == status)
-	// fmt.Println(int(Init) == status)
-	// fmt.Println(Init.Int() == status)
-	// fmt.Println(Success) // fmt.Println会调用String方法
+	fmt.Println(int(Init) == status)
+	fmt.Println(Init.Int() == status)
+	fmt.Println(Success) // fmt.Println会调用String方法
 
-	type Counter map[string]int
-	c := Counter{}
-	c["wang"] = 1
-	fmt.Println(c)
-
-	type Queue []int
-	q := make(Queue, 0)
-	q = append(q, 1)
-	fmt.Println(q)
+	// type Counter map[string]int
+	// c := Counter{}
+	// c["wang"] = 1
+	// fmt.Println(c)
+	//
+	// type Queue []int
+	// q := make(Queue, 0)
+	// q = append(q, 1)
+	// fmt.Println(q)
 
 }

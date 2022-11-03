@@ -59,10 +59,38 @@ func wordVectors(){
 		fmt.Printf("%s:%d\n",k,v)
 	}
 
+}
 
+func testUseMapAsSet() {
+  m := make(map[string]bool)
+  m["hello"] = true
+  m["world"] = true
 
+  key := "hello"
+  if _, ok := m[key]; ok {
+    fmt.Printf("%s key exists\n", key)
+  }
+}
+
+func unique(intVals []int) []int {
+  fmt.Println(intVals)
+  result := []int{}
+  tempMap := map[int]bool{}
+  for _,e := range intVals {
+    if _, ok := tempMap[e]; !ok {
+      tempMap[e] = true
+      result = append(result, e)
+    }
+  }
+  fmt.Println(tempMap)
+  fmt.Println(result)
+
+  return result
 }
 func main(){
 	// testMap()
-	wordVectors()
+	// wordVectors()
+  // testUseMapAsSet()
+  numbers := []int{1,2,33,2,1,33,44,55,66}
+  unique(numbers)
 }
