@@ -40,19 +40,21 @@ func (d Dog) Sleep() {
 }
 
 func main() {
-	// a := Animal{Name: "cat", Age: 3}
+	a := Animal{Name: "cat", Age: 3}
+  fmt.Println(a.Name)
 	// fmt.Println(a, a.Name, a.Age)
 	// a.Sleep()
 
 	aPrt := &Animal{Name: "dog", Age: 4}
-	aPrt.SetPetName("little dog")
-	fmt.Println(aPrt.GetPetName())
-
-	a1 := NewAnimal("pig", 2)
-	fmt.Println(a1)
-
-	d := Dog{}
-	d.Name = "xiaohu"
-	d.Sleep()
+  fmt.Println(aPrt.Name)
+	// aPrt.SetPetName("little dog")
+	// fmt.Println(aPrt.GetPetName())
+	//
+	// a1 := NewAnimal("pig", 2)
+	// fmt.Println(a1)
+	//
+	// d := Dog{}
+	// d.Name = "xiaohu"
+	// d.Sleep()
 
 }
