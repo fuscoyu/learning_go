@@ -1,8 +1,8 @@
 package main
 
 import (
-  "fmt"
-  "sort"
+	"fmt"
+	"sort"
 )
 
 func testArray(){
@@ -101,6 +101,17 @@ func testSortSlice() {
 
 
 }
+
+func testZeroSlice(){
+  var zeroSlice []int
+  fmt.Println(zeroSlice)
+  zeroSlice = append(zeroSlice, 1)
+  zeroSlice = append(zeroSlice, 2)
+  zeroSlice = append(zeroSlice, 3)
+  fmt.Println(zeroSlice)
+
+}
+
 func main(){
 	// testArray()
   // testArrayOperation()
@@ -118,7 +129,8 @@ func main(){
   //   b[i] = val+val // 这里是赋值，不是append
   // }
   // fmt.Println(b)
-  testSortSlice()
+  // testSortSlice()
+  testZeroSlice()
 
 
 }
