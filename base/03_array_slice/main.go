@@ -6,12 +6,16 @@ import (
 )
 
 func testArray(){
+  // 初始化数组
+  numbers := [256]int{'a':8, 'b':7, 'c':4,'d':3}
+  fmt.Println(numbers)
+
 	var arrayInt64 [3]int64 //声明
 	arrayInt64[0],arrayInt64[1],arrayInt64[2] = 0,1,2 //初始化
 	fmt.Println(arrayInt64) //[0 1 2]
 
-	arrayString := []string{"hello","go"}
-	fmt.Println(arrayString) // ["hello" "go"]
+	arrayString := [2]string{"hello","go"}
+	fmt.Println(arrayString, len(arrayString), cap(arrayString)) // ["hello" "go"]
 
 	arrayFloat := [...]float64{1,2,3}
 	fmt.Println(arrayFloat)// [1 2 3]
@@ -32,7 +36,7 @@ func testSlice(){
 	
 	// string类型的slice
 	names := []string{"zhang","wang","li","zhao"}
-	fmt.Println(names, len(names),cap(names)) //["zhang" "wang" "li" "zhao"] 4 4
+	fmt.Println(names, len(names), cap(names)) //["zhang" "wang" "li" "zhao"] 4 4
 	
 	// 拷贝names 切片
 	names1 := names[0:3]
@@ -113,7 +117,7 @@ func testZeroSlice(){
 }
 
 func main(){
-	// testArray()
+	testArray()
   // testArrayOperation()
 	// testSlice()
   // manyInts := make([]int, 100000)
@@ -130,7 +134,7 @@ func main(){
   // }
   // fmt.Println(b)
   // testSortSlice()
-  testZeroSlice()
+  // testZeroSlice()
 
 
 }
