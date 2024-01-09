@@ -6,10 +6,11 @@ import (
 )
 
 func testMap(){
-	//var m map[string]int 
-	// var m map[string]int{}
-	// var m map[string]int{"hello":1, "go":2}
-	m := make(map[string]int)
+  // var m map[string]int = nil
+  // m["key"] = 1 # 报错
+	var m map[string]int
+	// var m map[string]int{"hello":1, "go":2} # map 是引用类型
+	// m := make(map[string]int)
 	m["zhang"] = 1
 	m["wang"] = 2
 	m["li"] = 3
