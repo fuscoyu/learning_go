@@ -24,6 +24,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
+	LOG "log"
+
 	webappv1 "my.domain/guestbook/api/v1"
 )
 
@@ -50,6 +52,17 @@ func (r *GuestbookReconciler) Reconcile(ctx context.Context, req ctrl.Request) (
 	_ = log.FromContext(ctx)
 
 	// TODO(user): your logic here
+	obj := &webappv1.Guestbook{}
+	if err := r.Get(ctx, req.NamespacedName, obj); err != nil {
+		LOG.Println(err, "Unable to fetch object")
+	} else {
+		LOG.Println("Geeting from kubebuilder to", obj.Spec.Firstname, obj.Spec.Lastname)
+	}
+
+	obj.Status.Status = "Running"
+	if err := r.Status().Update(ctx, obj); err != nil {
+		LOG.Println(err, "Unable to update status")
+	}
 
 	return ctrl.Result{}, nil
 }

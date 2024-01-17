@@ -17,6 +17,8 @@ limitations under the License.
 package v1
 
 import (
+	"errors"
+
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
@@ -57,7 +59,7 @@ func (r *Guestbook) ValidateCreate() (admission.Warnings, error) {
 	guestbooklog.Info("validate create", "name", r.Name)
 
 	// TODO(user): fill in your validation logic upon object creation.
-	return nil, nil
+	return r.validataGuestbook()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
@@ -65,7 +67,7 @@ func (r *Guestbook) ValidateUpdate(old runtime.Object) (admission.Warnings, erro
 	guestbooklog.Info("validate update", "name", r.Name)
 
 	// TODO(user): fill in your validation logic upon object update.
-	return nil, nil
+	return r.validataGuestbook()
 }
 
 // ValidateDelete implements webhook.Validator so a webhook will be registered for the type
@@ -73,5 +75,12 @@ func (r *Guestbook) ValidateDelete() (admission.Warnings, error) {
 	guestbooklog.Info("validate delete", "name", r.Name)
 
 	// TODO(user): fill in your validation logic upon object deletion.
+	return nil, nil
+}
+
+func (r *Guestbook) validataGuestbook() (admission.Warnings, error) {
+  if len(r.Spec.Firstname) == 0 || len(r.Spec.Lastname) == 0 {
+    return nil, errors.New("firstname and Lastname cannot be set at the same time")
+  }
 	return nil, nil
 }
