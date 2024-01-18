@@ -79,8 +79,8 @@ func (r *Guestbook) ValidateDelete() (admission.Warnings, error) {
 }
 
 func (r *Guestbook) validataGuestbook() (admission.Warnings, error) {
-  if len(r.Spec.Firstname) == 0 || len(r.Spec.Lastname) == 0 {
-    return nil, errors.New("firstname and Lastname cannot be set at the same time")
-  }
+	if len(r.Spec.Firstname) == 0 || len(r.Spec.Lastname) == 0 {
+		return nil, errors.New("firstname and Lastname cannot be set at the same time")
+	}
 	return nil, nil
 }
